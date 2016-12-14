@@ -5,6 +5,9 @@
       <root url="file://$PROJECT_DIR$/ressources/lib/prolog/gnuprologjava-0.2.6/api" />
       <root url="file://$PROJECT_DIR$/ressources/lib/weka/weka-3-6-14/doc" />
     </JAVADOC>
-    <SOURCES />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/src" />
+      <root url="file://$PROJECT_DIR$/test" />
+    </SOURCES>
   </library>
 </component>

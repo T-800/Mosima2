@@ -374,6 +374,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="api" level="project" />
-    <orderEntry type="library" name="jpl1" level="project" />
+    <orderEntry type="library" name="jpl" level="project" />
   </component>
 </module>
