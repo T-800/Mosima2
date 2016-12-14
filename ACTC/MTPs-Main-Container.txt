@@ -1,1 +1,1 @@
-http://thinkpad:7778/acc
+http://134.157.121.153:7778/acc

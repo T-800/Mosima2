@@ -39,7 +39,7 @@ public class SmartAgent extends AbstractAgent {
         }
 
         followBehaviour = new FollowBehaviour(this);
-        addBehaviour(followBehaviour);
+        //addBehaviour(followBehaviour);
 
         System.out.println("the player "+this.getLocalName()+ " is started. Tag (0==enemy): " + friendorFoe);
 
