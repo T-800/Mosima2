@@ -36,6 +36,43 @@
     <libelement value="jar://$MODULE_DIR$/ressources/lib/prolog/gnuprologjava-0.2.6/gnuprologjava-0.2.6.jar!/" />
     <libelement value="jar://$MODULE_DIR$/ressources/lib/tools/sma-tools.jar!/" />
     <libelement value="jar://$MODULE_DIR$/ressources/lib/weka/weka-3-6-14/weka.jar!/" />
+    <libelement value="file://ressources/lib/jme/eventbus.jar" />
+    <libelement value="file://ressources/lib/jme/gluegen-rt.jar" />
+    <libelement value="file://ressources/lib/jme/j-ogg-oggd.jar" />
+    <libelement value="file://ressources/lib/jme/j-ogg-vorbisd.jar" />
+    <libelement value="file://ressources/lib/jme/jbullet.jar" />
+    <libelement value="file://ressources/lib/jme/jglfont-core.jar" />
+    <libelement value="file://ressources/lib/jme/jinput.jar" />
+    <libelement value="file://ressources/lib/jme/jME3-blender.jar" />
+    <libelement value="file://ressources/lib/jme/jME3-core.jar" />
+    <libelement value="file://ressources/lib/jme/jME3-desktop.jar" />
+    <libelement value="file://ressources/lib/jme/jME3-effects.jar" />
+    <libelement value="file://ressources/lib/jme/jME3-jbullet.jar" />
+    <libelement value="file://ressources/lib/jme/jME3-jogg.jar" />
+    <libelement value="file://ressources/lib/jme/jME3-lwjgl-natives.jar" />
+    <libelement value="file://ressources/lib/jme/jME3-lwjgl.jar" />
+    <libelement value="file://ressources/lib/jme/jME3-networking.jar" />
+    <libelement value="file://ressources/lib/jme/jME3-niftygui.jar" />
+    <libelement value="file://ressources/lib/jme/jME3-plugins.jar" />
+    <libelement value="file://ressources/lib/jme/jME3-terrain.jar" />
+    <libelement value="file://ressources/lib/jme/jME3-testdata.jar" />
+    <libelement value="file://ressources/lib/jme/joal.jar" />
+    <libelement value="file://ressources/lib/jme/jogl-all.jar" />
+    <libelement value="file://ressources/lib/jme/lwjgl.jar" />
+    <libelement value="file://ressources/lib/jme/nifty-default-controls.jar" />
+    <libelement value="file://ressources/lib/jme/nifty-examples.jar" />
+    <libelement value="file://ressources/lib/jme/nifty-style-black.jar" />
+    <libelement value="file://ressources/lib/jme/nifty.jar" />
+    <libelement value="file://ressources/lib/jme/stack-alloc.jar" />
+    <libelement value="file://ressources/lib/jme/vecmath.jar" />
+    <libelement value="file://ressources/lib/jme/xmlpull-xpp3.jar" />
+    <libelement value="file://ressources/lib/jade/jade.jar" />
+    <libelement value="file://ressources/lib/prolog/jiprolog-4.1.5.1.jar" />
+    <libelement value="file://ressources/lib/prolog/gnuprologjava-0.2.6/gnuprologjava-0.2.6.jar" />
+    <libelement value="file://ressources/lib/tools/sma-tools.jar" />
+    <libelement value="file://ressources/lib/weka/weka-3-6-14/weka.jar" />
+    <libelement value="file://C:/Program Files/swipl/lib/jpl.jar" />
+    <libelement value="file://C:/Users/asmaa/Desktop/Mosima2/github/Mosima2/ACTC/ressources/lib/jade/jade.jar" />
     <src_description expected_position="0">
       <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
       <src_folder value="file://$MODULE_DIR$/test" expected_position="1" />
@@ -53,7 +90,7 @@
     <orderEntry type="module-library">
       <library name="eventbus.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/eventbus.jar!/" />
+          <root url="file://ressources/lib/jme/eventbus.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -62,7 +99,7 @@
     <orderEntry type="module-library">
       <library name="gluegen-rt.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/gluegen-rt.jar!/" />
+          <root url="file://ressources/lib/jme/gluegen-rt.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -71,7 +108,7 @@
     <orderEntry type="module-library">
       <library name="j-ogg-oggd.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/j-ogg-oggd.jar!/" />
+          <root url="file://ressources/lib/jme/j-ogg-oggd.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -80,7 +117,7 @@
     <orderEntry type="module-library">
       <library name="j-ogg-vorbisd.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/j-ogg-vorbisd.jar!/" />
+          <root url="file://ressources/lib/jme/j-ogg-vorbisd.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -89,7 +126,7 @@
     <orderEntry type="module-library">
       <library name="jbullet.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/jbullet.jar!/" />
+          <root url="file://ressources/lib/jme/jbullet.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -98,7 +135,7 @@
     <orderEntry type="module-library">
       <library name="jglfont-core.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/jglfont-core.jar!/" />
+          <root url="file://ressources/lib/jme/jglfont-core.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -107,7 +144,7 @@
     <orderEntry type="module-library">
       <library name="jinput.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/jinput.jar!/" />
+          <root url="file://ressources/lib/jme/jinput.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -116,7 +153,7 @@
     <orderEntry type="module-library">
       <library name="jME3-blender.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/jME3-blender.jar!/" />
+          <root url="file://ressources/lib/jme/jME3-blender.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -125,7 +162,7 @@
     <orderEntry type="module-library">
       <library name="jME3-core.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/jME3-core.jar!/" />
+          <root url="file://ressources/lib/jme/jME3-core.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -134,7 +171,7 @@
     <orderEntry type="module-library">
       <library name="jME3-desktop.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/jME3-desktop.jar!/" />
+          <root url="file://ressources/lib/jme/jME3-desktop.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -143,7 +180,7 @@
     <orderEntry type="module-library">
       <library name="jME3-effects.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/jME3-effects.jar!/" />
+          <root url="file://ressources/lib/jme/jME3-effects.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -152,7 +189,7 @@
     <orderEntry type="module-library">
       <library name="jME3-jbullet.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/jME3-jbullet.jar!/" />
+          <root url="file://ressources/lib/jme/jME3-jbullet.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -161,7 +198,7 @@
     <orderEntry type="module-library">
       <library name="jME3-jogg.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/jME3-jogg.jar!/" />
+          <root url="file://ressources/lib/jme/jME3-jogg.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -170,7 +207,7 @@
     <orderEntry type="module-library">
       <library name="jME3-lwjgl-natives.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/jME3-lwjgl-natives.jar!/" />
+          <root url="file://ressources/lib/jme/jME3-lwjgl-natives.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -179,7 +216,7 @@
     <orderEntry type="module-library">
       <library name="jME3-lwjgl.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/jME3-lwjgl.jar!/" />
+          <root url="file://ressources/lib/jme/jME3-lwjgl.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -188,7 +225,7 @@
     <orderEntry type="module-library">
       <library name="jME3-networking.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/jME3-networking.jar!/" />
+          <root url="file://ressources/lib/jme/jME3-networking.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -197,7 +234,7 @@
     <orderEntry type="module-library">
       <library name="jME3-niftygui.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/jME3-niftygui.jar!/" />
+          <root url="file://ressources/lib/jme/jME3-niftygui.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -206,7 +243,7 @@
     <orderEntry type="module-library">
       <library name="jME3-plugins.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/jME3-plugins.jar!/" />
+          <root url="file://ressources/lib/jme/jME3-plugins.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -215,7 +252,7 @@
     <orderEntry type="module-library">
       <library name="jME3-terrain.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/jME3-terrain.jar!/" />
+          <root url="file://ressources/lib/jme/jME3-terrain.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -224,7 +261,7 @@
     <orderEntry type="module-library">
       <library name="jME3-testdata.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/jME3-testdata.jar!/" />
+          <root url="file://ressources/lib/jme/jME3-testdata.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -233,7 +270,7 @@
     <orderEntry type="module-library">
       <library name="joal.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/joal.jar!/" />
+          <root url="file://ressources/lib/jme/joal.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -242,7 +279,7 @@
     <orderEntry type="module-library">
       <library name="jogl-all.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/jogl-all.jar!/" />
+          <root url="file://ressources/lib/jme/jogl-all.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -251,7 +288,7 @@
     <orderEntry type="module-library">
       <library name="lwjgl.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/lwjgl.jar!/" />
+          <root url="file://ressources/lib/jme/lwjgl.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -260,7 +297,7 @@
     <orderEntry type="module-library">
       <library name="nifty-default-controls.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/nifty-default-controls.jar!/" />
+          <root url="file://ressources/lib/jme/nifty-default-controls.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -269,7 +306,7 @@
     <orderEntry type="module-library">
       <library name="nifty-examples.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/nifty-examples.jar!/" />
+          <root url="file://ressources/lib/jme/nifty-examples.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -278,7 +315,7 @@
     <orderEntry type="module-library">
       <library name="nifty-style-black.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/nifty-style-black.jar!/" />
+          <root url="file://ressources/lib/jme/nifty-style-black.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -287,7 +324,7 @@
     <orderEntry type="module-library">
       <library name="nifty.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/nifty.jar!/" />
+          <root url="file://ressources/lib/jme/nifty.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -296,7 +333,7 @@
     <orderEntry type="module-library">
       <library name="stack-alloc.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/stack-alloc.jar!/" />
+          <root url="file://ressources/lib/jme/stack-alloc.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -305,7 +342,7 @@
     <orderEntry type="module-library">
       <library name="vecmath.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/vecmath.jar!/" />
+          <root url="file://ressources/lib/jme/vecmath.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -314,7 +351,7 @@
     <orderEntry type="module-library">
       <library name="xmlpull-xpp3.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jme/xmlpull-xpp3.jar!/" />
+          <root url="file://ressources/lib/jme/xmlpull-xpp3.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -323,7 +360,7 @@
     <orderEntry type="module-library">
       <library name="jade.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/jade/jade.jar!/" />
+          <root url="file://ressources/lib/jade/jade.jar" />
         </CLASSES>
         <JAVADOC>
           <root url="http://jade.tilab.com/doc/api" />
@@ -334,20 +371,20 @@
     <orderEntry type="module-library">
       <library name="jiprolog-4.1.5.1.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/prolog/jiprolog-4.1.5.1.jar!/" />
+          <root url="file://ressources/lib/prolog/jiprolog-4.1.5.1.jar" />
         </CLASSES>
         <JAVADOC>
-          <root url="jar://$MODULE_DIR$/ressources/lib/prolog/jiprolog-4.1.5.1.jar!/com/ugos/jiprolog/resources" />
+          <root url="jar:platform:/resource/ACTC/ressources/lib/prolog/jiprolog-4.1.5.1.jar!/com/ugos/jiprolog/resources" />
         </JAVADOC>
         <SOURCES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/prolog/jiprolog-4.1.5.1.jar!/" />
+          <root url="file://ressources/lib/prolog/jiprolog-4.1.5.1.jar" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
       <library name="gnuprologjava-0.2.6.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/prolog/gnuprologjava-0.2.6/gnuprologjava-0.2.6.jar!/" />
+          <root url="file://ressources/lib/prolog/gnuprologjava-0.2.6/gnuprologjava-0.2.6.jar" />
         </CLASSES>
         <JAVADOC>
           <root url="jar://$MODULE_DIR$/ressources/lib/prolog/gnuprologjava-0.2.6.zip!/api" />
@@ -358,7 +395,7 @@
     <orderEntry type="module-library">
       <library name="sma-tools.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/tools/sma-tools.jar!/" />
+          <root url="file://ressources/lib/tools/sma-tools.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -367,7 +404,25 @@
     <orderEntry type="module-library">
       <library name="weka.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ressources/lib/weka/weka-3-6-14/weka.jar!/" />
+          <root url="file://ressources/lib/weka/weka-3-6-14/weka.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jpl.jar">
+        <CLASSES>
+          <root url="file://C:/Program Files/swipl/lib/jpl.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="C:/Users/asmaa/Desktop/Mosima2/github/Mosima2/ACTC/ressources/lib/jade/jade.jar">
+        <CLASSES>
+          <root url="file://C:/Users/asmaa/Desktop/Mosima2/github/Mosima2/ACTC/ressources/lib/jade/jade.jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -375,5 +430,13 @@
     </orderEntry>
     <orderEntry type="library" name="api" level="project" />
     <orderEntry type="library" name="jpl" level="project" />
+    <orderEntry type="library" name="jade" level="project" />
+    <orderEntry type="library" name="jme" level="project" />
+    <orderEntry type="library" name="prolog" level="project" />
+    <orderEntry type="library" name="tools" level="project" />
+    <orderEntry type="library" name="doc" level="project" />
+    <orderEntry type="library" name="gnuprologjava-0.2.6" level="project" />
+    <orderEntry type="library" name="jade1" level="project" />
+    <orderEntry type="library" name="sma-tools" level="project" />
   </component>
 </module>

@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="jpl">
+  <library name="jade1">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/ressources/prolog/jpl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ressources/lib/jade/jade.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

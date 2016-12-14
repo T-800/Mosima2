@@ -1,8 +1,7 @@
 <component name="libraryTable">
-  <library name="api">
+  <library name="doc">
     <CLASSES />
     <JAVADOC>
-      <root url="file://$PROJECT_DIR$/ressources/lib/prolog/gnuprologjava-0.2.6/api" />
       <root url="file://$PROJECT_DIR$/ressources/lib/weka/weka-3-6-14/doc" />
     </JAVADOC>
     <SOURCES />

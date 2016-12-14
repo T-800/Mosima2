@@ -1,4 +1,4 @@
-//package prologTest;
+package prologTest;//package prologTest;
 
 import java.net.URL;
 import java.net.URLClassLoader;
@@ -10,7 +10,7 @@ public class PrologCalls {
 
 	public static int succesRate=20;
 	
-//	public PrologCalls(){
+//	public prologTest.PrologCalls(){
 //		super();
 //		System.out.println("Instance created!");
 //	};

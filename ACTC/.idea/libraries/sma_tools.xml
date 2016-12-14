@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sma-tools">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ressources/lib/tools/sma-tools.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/ressources/lib/tools/sma-tools.jar!/" />
+    </SOURCES>
+  </library>
+</component>
