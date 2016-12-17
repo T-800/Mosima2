@@ -56,5 +56,13 @@ public class Situation {
 		this.consistency = consistency;
 		this.agents = agents;
 	}
+
+	public String toString(){
+		return "Altitude : " + agentAltitude +
+				" MinAlt : " + minAltitude +
+				" MaxAlt : " + maxAltitude +
+				" Fov : " + fieldOfView +
+				" Agent : " + agents;
+	}
 	
 }

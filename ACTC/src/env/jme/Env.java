@@ -258,7 +258,7 @@ public class Env extends SimpleApplication implements ActionListener {
 	 * add physics-controlled walking and jumping: */
 	private void setUpKeys() {
 		//System.out.println("HELLO");
-		inputManager.addMapping("Left", new KeyTrigger(KeyInput.KEY_R));
+		inputManager.addMapping("Left", new KeyTrigger(KeyInput.KEY_Q));
 		inputManager.addMapping("Right", new KeyTrigger(KeyInput.KEY_D));
 		inputManager.addMapping("Up", new KeyTrigger(KeyInput.KEY_Z));
 		inputManager.addMapping("Down", new KeyTrigger(KeyInput.KEY_S));

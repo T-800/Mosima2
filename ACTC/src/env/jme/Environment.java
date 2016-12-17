@@ -49,6 +49,7 @@ import com.jogamp.opengl.math.geom.Frustum;
 
 import dataStructures.tuple.Tuple2;
 import env.terrain.TerrainTools;
+import org.lwjgl.Sys;
 import sma.actionsBehaviours.LegalActions;
 import sma.actionsBehaviours.LegalActions.LegalAction;
 import sma.actionsBehaviours.LegalActions.Orientation;
@@ -883,10 +884,13 @@ public class Environment extends SimpleApplication {
 			ray.setLimit(FIELDOFVIEW);
 			CollisionResults results = new CollisionResults();
 			shootables.collideWith(ray, results);
-			CollisionResult closest = results.getCollision(1);
+			if(results.size() > 1){
+
+				CollisionResult closest = results.getCollision(1);
 			
-			if (agentPosition.distance(enemyPosition)<=FIELDOFVIEW && closest.getGeometry().equals(players.get(enemy))) {
-				res.add(new Tuple2<Vector3f, String>(enemyPosition, enemy));
+				if (agentPosition.distance(enemyPosition)<=FIELDOFVIEW && closest.getGeometry().equals(players.get(enemy))) {
+					res.add(new Tuple2<Vector3f, String>(enemyPosition, enemy));
+				}
 			}
 		}
 		return res;

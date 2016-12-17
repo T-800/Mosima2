@@ -30,6 +30,7 @@ public class FollowBehaviour extends TickerBehaviour {
         Situation situation = agent.observeAgents();
 
         if (situation.agents != null){
+            System.out.println(situation);
             if (dest==null || approximativeEqualsCoordinates(currentpos, dest)) {
                 ((AbstractAgent)this.myAgent).randomMove();
                 String enemy = "";
