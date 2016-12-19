@@ -186,6 +186,7 @@ public class Environment extends SimpleApplication {
 	    
 	    cam.setViewPort(0.0f, 1.0f, 0.6f, 1.0f);
 	    cam.setLocation(new Vector3f(21.384611f, 146.78105f, 155.05727f));
+	    //cam.setLocation(new Vector3f(0.0f, 0.0f, 0.0f));
 	    cam.lookAtDirection(new Vector3f(-0.0016761336f, -0.9035275f, -0.42852688f), new Vector3f(-0.003530928f, 0.4285301f, -0.9035206f));
 		
 	    flyCam.setMoveSpeed(50);
@@ -340,7 +341,7 @@ public class Environment extends SimpleApplication {
 		    player.setModelBound(new BoundingBox());
 		    player.updateModelBound();
 		    player.updateGeometricState();
-//			Spatial player = assetManager.loadModel("Models/Test/BasicCubeLow.obj");
+//			Spatial player = assetManager.loadModel("Models/PointInteret/BasicCubeLow.obj");
 			Material mat;
 			if (playertype.equals("player")) {
 				mat = new Material(assetManager, "Common/MatDefs/Misc/ShowNormals.j3md");

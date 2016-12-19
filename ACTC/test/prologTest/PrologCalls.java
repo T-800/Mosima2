@@ -16,7 +16,7 @@ public class PrologCalls {
 //	};
 	
 	public static void test(){
-		System.out.println("Test called :)");
+		System.out.println("PointInteret called :)");
 	}
 	
 	/**
@@ -49,19 +49,19 @@ public class PrologCalls {
 		String query = "consult('./ressources/prolog/test/fishing.pl')";
 		System.out.println(query+" ?: "+Query.hasSolution(query));
 		
-		System.out.println("**Test 1**");
+		System.out.println("**PointInteret 1**");
 		query="fish(tom)";
 		System.out.println(query+" ?: "+Query.hasSolution(query));
 		
-		System.out.println("**Test 2**");
+		System.out.println("**PointInteret 2**");
 		query="fish(maurice)";
 		System.out.println(query+" ?: "+Query.hasSolution(query));
 		
-		System.out.println("**Test 3**");
+		System.out.println("**PointInteret 3**");
 		query="caught(maurice,tom)";
 		System.out.println(query+" ?: "+Query.hasSolution(query));
 		
-		System.out.println("**Test 4**");
+		System.out.println("**PointInteret 4**");
 		query="caught(tom,maurice)";
 		System.out.println(query+" ?: "+Query.hasSolution(query));
 		

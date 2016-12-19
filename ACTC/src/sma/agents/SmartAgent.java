@@ -1,9 +1,9 @@
 package sma.agents;
 
 import env.jme.Environment;
+import env.jme.Situation;
 import sma.AbstractAgent;
 import sma.actionsBehaviours.FollowBehaviour;
-import sma.actionsBehaviours.RandomWalkBehaviour;
 
 public class SmartAgent extends AbstractAgent {
     /**
@@ -17,6 +17,9 @@ public class SmartAgent extends AbstractAgent {
     public boolean friendorFoe;
 
     public FollowBehaviour followBehaviour;
+    public Situation situation;
+
+    //ListePoint listePointsInterets;
 
     protected void setup(){
         super.setup();
@@ -38,6 +41,8 @@ public class SmartAgent extends AbstractAgent {
             System.exit(-1);
         }
 
+        //this.listePointsInterets = new ListePoint();
+
         followBehaviour = new FollowBehaviour(this);
         addBehaviour(followBehaviour);
 
@@ -45,7 +50,17 @@ public class SmartAgent extends AbstractAgent {
 
     }
 
-
+    public void observe() {
+        this.situation =  this.observeAgents();
+        //PointInteret pi = new PointInteret(this.situation, this.getCurrentPosition());
+        //listePointsInterets.addPoint(pi);
+        //System.out.println(pi);
+        //System.out.println(listePointsInterets);
+        //addMaxAlt(this.situation.maxAltitude);
+        if (! this.situation.agents.isEmpty()){
+            //System.out.println("J'ai vue un agent " + this.situation.agents);
+        }
+    }
 
 
 }

@@ -28,7 +28,7 @@ public class Principal {
 
 		//0) Create the environment
 
-		env = Environment.launchRandom(128);
+		env = Environment.launch("PerlinMap");
 
 		
 		emptyPlatform(containerList);
@@ -58,7 +58,7 @@ public class Principal {
 		Runtime rt = Runtime.instance();
 
 		// 1) create a platform (main container+DF+AMS)
-		Profile pMain = new ProfileImpl(hostname, 8878, null);
+		Profile pMain = new ProfileImpl(hostname, 8888, null);
 		System.out.println("Launching a main-container..."+pMain);
 		AgentContainer mainContainerRef = rt.createMainContainer(pMain); //DF and AMS are include
 
