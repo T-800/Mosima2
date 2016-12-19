@@ -4,6 +4,7 @@ import env.jme.Environment;
 import env.jme.Situation;
 import sma.AbstractAgent;
 import sma.actionsBehaviours.FollowBehaviour;
+import sma.actionsBehaviours.ShootBehaviour;
 
 public class SmartAgent extends AbstractAgent {
     /**
@@ -17,6 +18,7 @@ public class SmartAgent extends AbstractAgent {
     public boolean friendorFoe;
 
     public FollowBehaviour followBehaviour;
+    public ShootBehaviour shootBehaviour;
     public Situation situation;
 
     //ListePoint listePointsInterets;
@@ -44,8 +46,9 @@ public class SmartAgent extends AbstractAgent {
         //this.listePointsInterets = new ListePoint();
 
         followBehaviour = new FollowBehaviour(this);
+        shootBehaviour = new ShootBehaviour(this);
         addBehaviour(followBehaviour);
-
+        addBehaviour(shootBehaviour);
         System.out.println("the player "+this.getLocalName()+ " is started. Tag (0==enemy): " + friendorFoe);
 
     }
