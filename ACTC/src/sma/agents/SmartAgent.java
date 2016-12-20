@@ -1,9 +1,11 @@
 package sma.agents;
 
+import com.jme3.math.Vector3f;
 import env.jme.Environment;
 import env.jme.Situation;
 import sma.AbstractAgent;
 import sma.actionsBehaviours.FollowBehaviour;
+import sma.structures.PointDInteret;
 
 public class SmartAgent extends AbstractAgent {
     /**
@@ -18,6 +20,12 @@ public class SmartAgent extends AbstractAgent {
 
     public FollowBehaviour followBehaviour;
     public Situation situation;
+
+    public static float TAILLE_Y = -1;
+    private double avgAlt = 0;
+    private int  n = 0;
+    private Vector3f maxAlt = new Vector3f();
+
 
     //ListePoint listePointsInterets;
 
@@ -40,6 +48,10 @@ public class SmartAgent extends AbstractAgent {
             System.err.println("Malfunction during parameter's loading of agent"+ this.getClass().getName());
             System.exit(-1);
         }
+        observe();
+
+        TAILLE_Y = 150;//- observeAgents().agentAltitude.getY();
+        System.out.println(TAILLE_Y);
 
         //this.listePointsInterets = new ListePoint();
 
@@ -52,7 +64,15 @@ public class SmartAgent extends AbstractAgent {
 
     public void observe() {
         this.situation =  this.observeAgents();
-        //PointInteret pi = new PointInteret(this.situation, this.getCurrentPosition());
+        PointDInteret pi = new PointDInteret(this.situation, this);
+
+        avgAlt += pi.position.getY();
+        n+=1;
+
+        if(maxAlt.getY() < pi.maxAltitude.getY()) {
+            maxAlt = pi.maxAltitude;
+        }
+
         //listePointsInterets.addPoint(pi);
         //System.out.println(pi);
         //System.out.println(listePointsInterets);
@@ -62,5 +82,11 @@ public class SmartAgent extends AbstractAgent {
         }
     }
 
+    public double getAvgAlt() {
+        return avgAlt/n;
+    }
 
+    public Vector3f getMaxAlt() {
+        return new Vector3f(maxAlt.getX() - 64 , maxAlt.getY() - TAILLE_Y, maxAlt.getZ() - 64);
+    }
 }
