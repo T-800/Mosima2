@@ -2,17 +2,13 @@ package sma.actionsBehaviours;
 
 import com.jme3.math.Vector3f;
 
-import env.jme.PlayerControl;
 import env.jme.Situation;
-import jade.core.behaviours.CyclicBehaviour;
 import jade.core.behaviours.TickerBehaviour;
-import org.lwjgl.Sys;
-import sma.AbstractAgent;
+import org.jpl7.Query;
+import sma.agents.AbstractAgent;
 import sma.agents.SmartAgent;
 
 import java.util.Random;
-
-import static sma.actionsBehaviours.LegalActions.LegalAction.*;
 
 public class FollowBehaviour extends TickerBehaviour {
     SmartAgent agent;
@@ -39,7 +35,7 @@ public class FollowBehaviour extends TickerBehaviour {
         //System.out.println("Max : " + agent.getMaxAlt());
         if(dest == null || approximativeEqualsCoordinates(currentpos, dest)){
             if (situation.agents.isEmpty()){
-                if (exploration()){
+                if (explo()){
                     System.out.println("Exploration");
                     ((AbstractAgent)this.myAgent).randomMove();
                     String enemy;
@@ -90,11 +86,18 @@ public class FollowBehaviour extends TickerBehaviour {
         //onTick();
     //}
 
-    public static boolean exploration(){
+    public static boolean explor(){
         Random r=new Random();
-        //theoretically, the function should check in the environment that the conditions for the fish to be hooked are met.
         int x=r.nextInt(100);
-        //System.out.println("Hooked function triggered; succesRate = "+succesRate+"; v= "+x);
-        return (x < 50);
+        return (x < SmartAgent.ALPHA);
+    }
+
+
+    public boolean explo(){
+        String query = "consult('./ressources/prolog/test/position.pl')";
+        System.out.println(query+" ?: "+ Query.hasSolution(query));
+        query="exploration(tom,maurice)";
+        //System.out.println(query+" ?: "+Query.hasSolution(query));
+        return Query.hasSolution(query);
     }
 }

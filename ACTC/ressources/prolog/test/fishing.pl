@@ -15,9 +15,11 @@ victorious(X) :-
 	
 caught(X,Y) :-
 	free(Y),
-	fishing(X).
-%	jpl_call("prolog.PrologCalls",hooked,[X,Y],R),
-%	jpl_is_true(R).
+	fishing(X),
+	%jpl_call("PrologCalls",hooked,[X,Y],R),
+	jpl_call('prologTest.PrologCalls',test,[], @(void)),
+    jpl_call('prologTest.PrologCalls',hooked,[X,Y],R),
+	jpl_is_true(R).
 	
 	
 

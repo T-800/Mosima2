@@ -3,7 +3,8 @@ package sma.agents;
 import com.jme3.math.Vector3f;
 import env.jme.Environment;
 import env.jme.Situation;
-import sma.AbstractAgent;
+import org.jpl7.Query;
+import sma.agents.AbstractAgent;
 import sma.actionsBehaviours.FollowBehaviour;
 import sma.structures.PointDInteret;
 
@@ -25,6 +26,8 @@ public class SmartAgent extends AbstractAgent {
     private double avgAlt = 0;
     private int  n = 0;
     private Vector3f maxAlt = new Vector3f();
+
+    public static final float ALPHA = 50;
 
 
     //ListePoint listePointsInterets;
@@ -50,10 +53,8 @@ public class SmartAgent extends AbstractAgent {
         }
         observe();
 
-        TAILLE_Y = 150;//- observeAgents().agentAltitude.getY();
+        TAILLE_Y = 150;
         System.out.println(TAILLE_Y);
-
-        //this.listePointsInterets = new ListePoint();
 
         followBehaviour = new FollowBehaviour(this);
         addBehaviour(followBehaviour);
@@ -68,15 +69,10 @@ public class SmartAgent extends AbstractAgent {
 
         avgAlt += pi.position.getY();
         n+=1;
-
+        //isAltSupAvg();
         if(maxAlt.getY() < pi.maxAltitude.getY()) {
             maxAlt = pi.maxAltitude;
         }
-
-        //listePointsInterets.addPoint(pi);
-        //System.out.println(pi);
-        //System.out.println(listePointsInterets);
-        //addMaxAlt(this.situation.maxAltitude);
         if (! this.situation.agents.isEmpty()){
             //System.out.println("J'ai vue un agent " + this.situation.agents);
         }
@@ -89,4 +85,20 @@ public class SmartAgent extends AbstractAgent {
     public Vector3f getMaxAlt() {
         return new Vector3f(maxAlt.getX() - 64 , maxAlt.getY() - TAILLE_Y, maxAlt.getZ() - 64);
     }
+
+    public boolean isAltSupAvg(){
+        String query = "consult('./ressources/prolog/test/position.pl')";
+        //String query = "consult('./ressources/prolog/test/fishing.pl')";
+        System.out.println(query+" ?: "+ Query.hasSolution(query));
+        query="interessant(X, Y)";
+        //query="caught(tom,maurice)";
+        System.out.println(query+" ?: "+Query.hasSolution(query));
+        return Query.hasSolution(query);
+    }
+
+    public static boolean isAltSupAvg(String s , String avg){
+        System.out.println(s + " : " + avg);
+        return true;
+    }
+
 }

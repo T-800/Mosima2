@@ -1,7 +1,6 @@
 package sma.agents;
 
 import env.jme.Environment;
-import sma.AbstractAgent;
 import sma.actionsBehaviours.RandomWalkBehaviour;
 
 public class BasicAgent extends AbstractAgent {
