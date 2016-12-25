@@ -36,7 +36,7 @@ public class ObserveBehaviour  extends TickerBehaviour {
         Situation situation = SmartAgent.lastSituation;
         if(dest == null || approximativeEqualsCoordinates(currentpos, dest)){
             if (situation.agents.isEmpty()){
-                if (explo()){
+                if (agent.exploration()){
                     System.out.println("Exploration");
                     agent.randomMove();
 
