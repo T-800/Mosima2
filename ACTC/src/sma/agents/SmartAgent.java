@@ -9,6 +9,8 @@ import sma.agents.AbstractAgent;
 import sma.actionsBehaviours.FollowBehaviour;
 import sma.structures.PointDInteret;
 
+import java.util.Random;
+
 public class SmartAgent extends AbstractAgent {
     /**
      *
@@ -35,7 +37,7 @@ public class SmartAgent extends AbstractAgent {
     private static Vector3f maxAlt = new Vector3f();
     private String enemy;
 
-    public static final float ALPHA = 50;
+    private static final float ALPHA = 50;
 
 
     //ListePoint listePointsInterets;
@@ -144,6 +146,15 @@ public class SmartAgent extends AbstractAgent {
     }
     public static boolean supAvgMaxDepth(String s){
         return new Double(s) > avgMaxDepth/n;
+    }
+
+    public static boolean exploration(){
+        /**
+         * renvoi la proba que l'agent parte en exploration plutot que exploitation
+         */
+        Random r=new Random();
+        int x=r.nextInt(100);
+        return (x < SmartAgent.ALPHA);
     }
 
 

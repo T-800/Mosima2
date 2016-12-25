@@ -39,7 +39,7 @@ public class ShootBehaviour extends TickerBehaviour {
         //Vector3f dest = agent.getDestination();
 
         agent.observe();
-        Situation situation = agent.situation;
+        Situation situation = SmartAgent.lastSituation;
         String enemy;
         Situation st  = ((AbstractAgent)this.myAgent).observeAgents();
         

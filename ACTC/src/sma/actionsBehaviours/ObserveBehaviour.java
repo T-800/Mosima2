@@ -65,11 +65,7 @@ public class ObserveBehaviour  extends TickerBehaviour {
         return b-5 <= a && a <= b+5;
     }
 
-    public static boolean explor(){
-        Random r=new Random();
-        int x=r.nextInt(100);
-        return (x < SmartAgent.ALPHA);
-    }
+
 
 
     public boolean explo(){

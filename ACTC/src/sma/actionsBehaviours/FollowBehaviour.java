@@ -28,7 +28,7 @@ public class FollowBehaviour extends OneShotBehaviour {
     @Override
     public void action() {
         Vector3f dest;
-        Situation situation = agent.situation;
+        Situation situation = SmartAgent.lastSituation;
         dest = situation.agents.get(0).getFirst();
         System.out.println("J'ai follow une cible : " + dest);
         agent.moveTo(dest);
