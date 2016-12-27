@@ -2,9 +2,8 @@ package sma.actionsBehaviours;
 
 import com.jme3.math.Vector3f;
 
-import env.jme.PlayerControl;
 import jade.core.behaviours.TickerBehaviour;
-import sma.AbstractAgent;
+import sma.agents.AbstractAgent;
 
 public class RandomWalkBehaviour extends TickerBehaviour {
 

@@ -613,7 +613,7 @@ public class Environment extends SimpleApplication {
 	 */
 	public boolean shoot(String agent, String enemy) {
 		if (players.containsKey(agent) && players.containsKey(enemy)) {
-
+			System.out.println("exist");
 			Vector3f origin = getCurrentPosition(agent);
 			Vector3f target = getCurrentPosition(enemy);
 			Vector3f dir = target.subtract(origin).normalize();
@@ -629,6 +629,7 @@ public class Environment extends SimpleApplication {
 
 				//				System.out.println("closest: "+closest.getGeometry().getWorldTranslation());
 				//				System.out.println("target: "+players.get(enemy).getWorldTranslation());
+				System.out.println("is visible");
 				this.lastActions.put(agent, LegalAction.SHOOT);
 				Random r = new Random();
 				if (r.nextFloat()<0.7) {
@@ -679,11 +680,13 @@ public class Environment extends SimpleApplication {
 		
 		
 		if (((Camera)players.get(agent).getUserData("cam")).contains(bv).equals(FrustumIntersect.Inside)) {
+			System.out.println("inside");
 			Ray ray = new Ray(origin, dir);
 			ray.setLimit(FIELDOFVIEW);
 			CollisionResults results = new CollisionResults();
 			shootables.collideWith(ray, results);
 			if (results.size()>1) {
+				System.out.println(">1");
 				CollisionResult closest = results.getCollision(1);
 				if ( approximativeEqualsCoordinates(closest.getGeometry().getWorldTranslation(), players.get(enemy).getWorldTranslation())) {
 					if (origin.distance(target)<=FIELDOFVIEW) {

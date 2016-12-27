@@ -52,7 +52,7 @@ public class PlayerControl extends CharacterControl{
 			if (!equalsCoordinates(this.spatial.getWorldTranslation().x, destination.x) /*|| !equalsCoordinates(player.getWorldTranslation().z, dest.z)*/ || !equalsCoordinates(this.spatial.getWorldTranslation().z, destination.z)) {
 				Vector3f dir = this.destination.subtract(this.spatial.getWorldTranslation());
 				
-				dir.setY(dir.getY()+10);
+				dir.setY(dir.getY()+1);
 				
 				setViewDirection(dir.clone().setY(0));
 				dir.normalizeLocal();
@@ -111,6 +111,7 @@ public class PlayerControl extends CharacterControl{
 	public void moveTo(Vector3f destination) {
 		this.destination = destination;
 		ismoving = true;
+		//this.cam.lookAtDirection(destination, Vector3f.UNIT_Y);
 //		channel.setAnim("Walk", 0.50f);
 	}
 	
@@ -118,6 +119,7 @@ public class PlayerControl extends CharacterControl{
 		initialPosition = this.spatial.getWorldTranslation().clone();
 		this.direction = direction;
 		ismoving2 = true;
+		//this.cam.lookAtDirection(direction, Vector3f.UNIT_Y);
 	}
 	
 	public Vector3f getDestination() {

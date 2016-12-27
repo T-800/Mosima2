@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import com.jme3.app.SimpleApplication;
-
 import env.jme.Environment;
 import jade.core.Profile;
 import jade.core.ProfileImpl;
