@@ -4,6 +4,7 @@ import com.jme3.math.Vector3f;
 import env.jme.Environment;
 import env.jme.Situation;
 import org.jpl7.Query;
+import sma.actionsBehaviours.ObserveBehaviour;
 import sma.agents.AbstractAgent;
 import sma.actionsBehaviours.FollowBehaviour;
 <<<<<<< HEAD
@@ -11,6 +12,8 @@ import sma.actionsBehaviours.ShootBehaviour;
 =======
 import sma.structures.PointDInteret;
 >>>>>>> origin/master
+
+import java.util.Random;
 
 public class SmartAgent extends AbstractAgent {
     /**
@@ -23,16 +26,28 @@ public class SmartAgent extends AbstractAgent {
      */
     public boolean friendorFoe;
 
+<<<<<<< HEAD
     public FollowBehaviour followBehaviour;
     public ShootBehaviour shootBehaviour;
     public Situation situation;
+=======
+    public ObserveBehaviour observeBehaviour;
+
+    /* J'ai la derniere situation en static pour pouvoir l'avoir dans prolog
+     * Mais c'est possible qu'on le retire
+    */
+    public static Situation lastSituation;
+>>>>>>> 6336919b30103b2c2313fd3cf17d0ee6f09c0121
 
     public static float TAILLE_Y = -1;
-    private double avgAlt = 0;
-    private int  n = 0;
-    private Vector3f maxAlt = new Vector3f();
+    private static double avgAlt = 0;
+    private static double avgFov = 0;
+    private static double avgMaxDepth = 0;
+    private static int  n = 0;
+    private static Vector3f maxAlt = new Vector3f();
+    private String enemy;
 
-    public static final float ALPHA = 50;
+    private static final float ALPHA = 50;
 
 
     //ListePoint listePointsInterets;
@@ -61,28 +76,43 @@ public class SmartAgent extends AbstractAgent {
         TAILLE_Y = 150;
         System.out.println(TAILLE_Y);
 
+<<<<<<< HEAD
         followBehaviour = new FollowBehaviour(this);
         shootBehaviour = new ShootBehaviour(this);
         addBehaviour(followBehaviour);
         addBehaviour(shootBehaviour);
+=======
+        observeBehaviour = new ObserveBehaviour(this);
+        addBehaviour(observeBehaviour);
+
+>>>>>>> 6336919b30103b2c2313fd3cf17d0ee6f09c0121
         System.out.println("the player "+this.getLocalName()+ " is started. Tag (0==enemy): " + friendorFoe);
 
+        if (this.getLocalName().equals("Player1")) {
+            enemy = "Player2";
+        }
+        else {
+            enemy = "Player1";
+        }
     }
-
+    public static boolean observe_prolog(){
+        return true;
+    }
     public void observe() {
-        this.situation =  this.observeAgents();
-        PointDInteret pi = new PointDInteret(this.situation, this);
+        lastSituation =  this.observeAgents();
+        PointDInteret pi = new PointDInteret(lastSituation, this);
 
         avgAlt += pi.position.getY();
+        avgFov += pi.fieldOfView;
+        avgMaxDepth += pi.maxDepth;
         n+=1;
-        //isAltSupAvg();
         if(maxAlt.getY() < pi.maxAltitude.getY()) {
             maxAlt = pi.maxAltitude;
         }
-        if (! this.situation.agents.isEmpty()){
-            //System.out.println("J'ai vue un agent " + this.situation.agents);
-        }
     }
+
+
+
 
     public double getAvgAlt() {
         return avgAlt/n;
@@ -92,19 +122,58 @@ public class SmartAgent extends AbstractAgent {
         return new Vector3f(maxAlt.getX() - 64 , maxAlt.getY() - TAILLE_Y, maxAlt.getZ() - 64);
     }
 
-    public boolean isAltSupAvg(){
-        String query = "consult('./ressources/prolog/test/position.pl')";
-        //String query = "consult('./ressources/prolog/test/fishing.pl')";
-        System.out.println(query+" ?: "+ Query.hasSolution(query));
-        query="interessant(X, Y)";
-        //query="caught(tom,maurice)";
-        System.out.println(query+" ?: "+Query.hasSolution(query));
-        return Query.hasSolution(query);
+
+
+    public static boolean isAltSupAvg(){
+        return lastSituation.agentAltitude.getY()  + TAILLE_Y > avgAlt/n;
     }
 
-    public static boolean isAltSupAvg(String s , String avg){
-        System.out.println(s + " : " + avg);
-        return true;
+
+    public String getEnemy() {
+        return enemy;
     }
+
+
+    /*******************************************
+     ******** PROLOG FONCTIONS *****************
+     *******************************************/
+
+
+    public static boolean seeEnnemy(){
+        return !lastSituation.agents.isEmpty();
+    }
+
+    public static boolean supAvgAlt(){
+        return lastSituation.agentAltitude.getY() + TAILLE_Y > avgAlt/n;
+    }
+
+    public static boolean supAvgAlt(String s){
+        return new Double(s) + TAILLE_Y > avgAlt/n;
+    }
+
+    public static boolean supAvgFov(){
+        return lastSituation.fieldOfView > avgFov/n;
+    }
+    public static boolean supAvgFov(String s){
+        return new Double(s) > avgFov/n;
+    }
+
+    public static boolean supAvgMaxDepth(){
+        return lastSituation.maxDepth> avgMaxDepth/n;
+    }
+    public static boolean supAvgMaxDepth(String s){
+        return new Double(s) > avgMaxDepth/n;
+    }
+
+    public static boolean exploration(){
+        /**
+         * renvoi la proba que l'agent parte en exploration plutot que exploitation
+         */
+        Random r=new Random();
+        int x=r.nextInt(100);
+        return (x < SmartAgent.ALPHA);
+    }
+
+
 
 }

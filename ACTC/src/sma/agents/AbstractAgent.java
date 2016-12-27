@@ -1,18 +1,13 @@
 package sma.agents;
 
-import java.util.Iterator;
-import java.util.List;
 import java.util.Random;
 
 import com.jme3.math.Vector3f;
 
-import dataStructures.tuple.Tuple2;
 import env.EnvironmentManager;
 import env.jme.Environment;
 import env.jme.Situation;
-import jade.core.AID;
 import jade.core.Agent;
-import jade.lang.acl.ACLMessage;
 import sma.actionsBehaviours.LegalActions.LegalAction;
 
 public class AbstractAgent extends Agent implements EnvironmentManager {
