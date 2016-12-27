@@ -7,7 +7,11 @@ import org.jpl7.Query;
 import sma.actionsBehaviours.ObserveBehaviour;
 import sma.agents.AbstractAgent;
 import sma.actionsBehaviours.FollowBehaviour;
+<<<<<<< HEAD
+import sma.actionsBehaviours.ShootBehaviour;
+=======
 import sma.structures.PointDInteret;
+>>>>>>> origin/master
 
 import java.util.Random;
 
@@ -22,12 +26,18 @@ public class SmartAgent extends AbstractAgent {
      */
     public boolean friendorFoe;
 
+<<<<<<< HEAD
+    public FollowBehaviour followBehaviour;
+    public ShootBehaviour shootBehaviour;
+    public Situation situation;
+=======
     public ObserveBehaviour observeBehaviour;
 
     /* J'ai la derniere situation en static pour pouvoir l'avoir dans prolog
      * Mais c'est possible qu'on le retire
     */
     public static Situation lastSituation;
+>>>>>>> 6336919b30103b2c2313fd3cf17d0ee6f09c0121
 
     public static float TAILLE_Y = -1;
     private static double avgAlt = 0;
@@ -66,9 +76,16 @@ public class SmartAgent extends AbstractAgent {
         TAILLE_Y = 150;
         System.out.println(TAILLE_Y);
 
+<<<<<<< HEAD
+        followBehaviour = new FollowBehaviour(this);
+        shootBehaviour = new ShootBehaviour(this);
+        addBehaviour(followBehaviour);
+        addBehaviour(shootBehaviour);
+=======
         observeBehaviour = new ObserveBehaviour(this);
         addBehaviour(observeBehaviour);
 
+>>>>>>> 6336919b30103b2c2313fd3cf17d0ee6f09c0121
         System.out.println("the player "+this.getLocalName()+ " is started. Tag (0==enemy): " + friendorFoe);
 
         if (this.getLocalName().equals("Player1")) {
