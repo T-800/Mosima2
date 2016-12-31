@@ -8,6 +8,7 @@ import sma.actionsBehaviours.ObserveBehaviour;
 import sma.agents.AbstractAgent;
 import sma.actionsBehaviours.FollowBehaviour;
 import sma.actionsBehaviours.ShootBehaviour;
+import sma.structures.EnsPointDInteret;
 import sma.structures.PointDInteret;
 
 import java.util.Random;
@@ -31,6 +32,7 @@ public class SmartAgent extends AbstractAgent {
     /* J'ai la derniere situation en static pour pouvoir l'avoir dans prolog
      * Mais c'est possible qu'on le retire
     */
+    public EnsPointDInteret ensPointDInteret;
     public static Situation lastSituation;
 
     public static float TAILLE_Y = -1;
@@ -65,15 +67,16 @@ public class SmartAgent extends AbstractAgent {
             System.err.println("Malfunction during parameter's loading of agent"+ this.getClass().getName());
             System.exit(-1);
         }
+        ensPointDInteret = new EnsPointDInteret();
         observe();
 
         TAILLE_Y = 150;
         System.out.println(TAILLE_Y);
 
-        followBehaviour = new FollowBehaviour(this);
-        shootBehaviour = new ShootBehaviour(this);
-        addBehaviour(followBehaviour);
-        addBehaviour(shootBehaviour);
+        //followBehaviour = new FollowBehaviour(this);
+        //shootBehaviour = new ShootBehaviour(this);
+        //addBehaviour(followBehaviour);
+        //addBehaviour(shootBehaviour);
         observeBehaviour = new ObserveBehaviour(this);
         addBehaviour(observeBehaviour);
         System.out.println("the player "+this.getLocalName()+ " is started. Tag (0==enemy): " + friendorFoe);
@@ -99,6 +102,7 @@ public class SmartAgent extends AbstractAgent {
         if(maxAlt.getY() < pi.maxAltitude.getY()) {
             maxAlt = pi.maxAltitude;
         }
+        ensPointDInteret.add(pi);
     }
 
 

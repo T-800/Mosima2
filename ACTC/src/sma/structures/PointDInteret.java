@@ -7,6 +7,8 @@ import sma.agents.SmartAgent;
 
 public class PointDInteret {
 
+    private static final float EPSILON = 0.2f;
+
     public Vector3f position;
     public Vector3f minAltitude;
     public Vector3f maxAltitude;
@@ -33,6 +35,13 @@ public class PointDInteret {
                 " Fov : " + this.fieldOfView +
                 " Depth : " + this.maxDepth;
 
+    }
+
+    public boolean estDomine(PointDInteret p){
+        return this.position.getY() < p.position.getY() * (1 + EPSILON) ||
+                this.maxAltitude.getY() < p.maxAltitude.getY() * (1 + EPSILON) ||
+                this.fieldOfView < p.fieldOfView * (1 + EPSILON) ||
+                this.maxDepth < p.maxDepth * (1 + EPSILON);
     }
 
 

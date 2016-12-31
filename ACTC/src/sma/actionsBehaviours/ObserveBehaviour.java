@@ -7,7 +7,6 @@ import org.jpl7.Query;
 import sma.agents.AbstractAgent;
 import sma.agents.SmartAgent;
 
-import java.util.Random;
 
 
 public class ObserveBehaviour  extends TickerBehaviour {
@@ -29,10 +28,12 @@ public class ObserveBehaviour  extends TickerBehaviour {
          * C'est cette classe ou on va mettre les appel à prolog :-)
          */
 
+
         Vector3f currentpos  = agent.getCurrentPosition();
         Vector3f dest = agent.getDestination();
 
         agent.observe();
+
         Situation situation = SmartAgent.lastSituation;
         if(dest == null || approximativeEqualsCoordinates(currentpos, dest)){
             if (situation.agents.isEmpty()){
@@ -49,6 +50,7 @@ public class ObserveBehaviour  extends TickerBehaviour {
             }
             else {
                 agent.addBehaviour(new FollowBehaviour(agent));
+                agent.addBehaviour(new ShootBehaviour(agent));
             }
         }
         else {
