@@ -42,8 +42,7 @@ tirer(X,Y) :-
 	jpl_is_true(R).
 	
 
-pointInteret(X) :-
-    jpl_call('java.lang.System',getProperty,['user.dir'],F),
+pointInteret() :-
   	lahauteur(X),
   	or(depth(X)),
     or(champDeVision(X)),
@@ -75,8 +74,8 @@ follow(X,Y) :-
 %cettefonction doit verifier qu'il n'y a pas l'ennemi en vue(je pense c deja code par le prof dans environnement
 %la fonction que j'utilise pour scanner l'environnement dans shootBehaviour elle rend la liste des agents presents
 % du coup faut une fonction qui l'appelle et si c vide, sa rend false dans EnnemiEnVu(prolog).	
-ennemiEnvu(Y):-
-	jpl_call('ObserveBehaviour',ObserveAgentBoolean,[],R),
+ennemiEnvu():-
+	jpl_call('ObserveBehaviour',observeAgentBoolean,[],R),
 	jpl_is_true(R).	
 
 %J'ai besoin de verifier qu'il est blesse
@@ -86,8 +85,6 @@ blesse(X):-
 	
 %Avoir un boolean pour verifier si oui ou non 
 lahauteur() :-
-    %jpl_call('java.lang.System',getProperty,['user.dir'],F),
-    %write(F).
 	jpl_call('sma.agents.SmartAgent',supAvgAlt,[],R),
 	jpl_is_true(R).
 
