@@ -18,20 +18,12 @@ victorious(X) :-
 caught(X,Y) :-
 	free(Y),
 	fishing(X),
-<<<<<<< HEAD
 	%jpl_call('java.lang.System',getProperty,['user.dir'],F),
 	%write(F).
-	jpl_call('PrologCalls',test,[], @(void)),
-	jpl_call('PrologCalls',hooked,[X,Y],R),
+	jpl_call('prologTest.PrologCalls',test,[], @(void)),
+	jpl_call('prologTest.PrologCalls',hooked,[X,Y],R),
 	jpl_is_true(R).
 
-=======
-	%jpl_call("PrologCalls",hooked,[X,Y],R),
-	jpl_call('prologTest.PrologCalls',test,[], @(void)),
-    jpl_call('prologTest.PrologCalls',hooked,[X,Y],R),
-	jpl_is_true(R).
-	
->>>>>>> origin/master
 	
 
 

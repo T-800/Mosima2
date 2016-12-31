@@ -4,6 +4,7 @@ import com.jme3.math.Vector3f;
 import env.jme.Environment;
 import env.jme.Situation;
 import org.jpl7.Query;
+import org.lwjgl.Sys;
 import sma.actionsBehaviours.ObserveBehaviour;
 import sma.agents.AbstractAgent;
 import sma.actionsBehaviours.FollowBehaviour;
@@ -23,6 +24,7 @@ public class SmartAgent extends AbstractAgent {
      * True to create a friend, false otherwise
      */
     public boolean friendorFoe;
+    String query;
 
     public FollowBehaviour followBehaviour;
     public ShootBehaviour shootBehaviour;
@@ -68,7 +70,7 @@ public class SmartAgent extends AbstractAgent {
             System.exit(-1);
         }
         ensPointDInteret = new EnsPointDInteret();
-        observe();
+        //observe();
 
         TAILLE_Y = 150;
         System.out.println(TAILLE_Y);
@@ -87,6 +89,10 @@ public class SmartAgent extends AbstractAgent {
         else {
             enemy = "Player1";
         }
+
+        query = "consult('./ressources/prolog/test/position.pl')";
+        System.out.println(query+" ?: "+Query.hasSolution(query));
+
     }
     public static boolean observe_prolog(){
         return true;
@@ -94,6 +100,7 @@ public class SmartAgent extends AbstractAgent {
     public void observe() {
         lastSituation =  this.observeAgents();
         PointDInteret pi = new PointDInteret(lastSituation, this);
+        this.testPrologCall();
 
         avgAlt += pi.position.getY();
         avgFov += pi.fieldOfView;
@@ -153,6 +160,7 @@ public class SmartAgent extends AbstractAgent {
     }
 
     public static boolean supAvgMaxDepth(){
+
         return lastSituation.maxDepth> avgMaxDepth/n;
     }
     public static boolean supAvgMaxDepth(String s){
@@ -169,5 +177,21 @@ public class SmartAgent extends AbstractAgent {
     }
 
 
+    /*********************************
+     *********** PROLOG CALLS ********
+     *********************************/
+    public boolean testPrologCall(){
+
+        System.out.println("**test Prolog call**");
+        query="lahauteur()";
+        System.out.println(query+" ?: "+Query.hasSolution(query));
+        query="depth()";
+        System.out.println(query+" ?: "+Query.hasSolution(query));
+        query="champDeVision()";
+        System.out.println(query+" ?: "+Query.hasSolution(query));
+
+        return true;
+
+    }
 
 }
